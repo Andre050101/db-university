@@ -58,5 +58,5 @@ COUNT(`exam_student`.`exam_id`) AS n_tentativi,
 MAX(`exam_student`.`vote`) AS voto_MAX
 FROM `students`
 JOIN `exam_student` ON `students`.`id` = `exam_student`.`student_id`
-WHERE `exam_student`.`vote` >= 18
 GROUP BY `students`.`id`, `students`.`name`, `exam_student`.`exam_id`;
+HAVING `exam_student`.`vote` >= 18
